@@ -20,7 +20,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.postgresql:postgresql:42.2.19'
 
-	runtimeOnly 'com.h2database:h2'
+
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compileOnly("org.springframework.boot:spring-boot-devtools")

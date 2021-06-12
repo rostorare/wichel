@@ -1,6 +1,6 @@
 package htw.berlin.wichteln;
 
-import htw.berlin.wichteln.jpa.Person;
+import htw.berlin.wichteln.model.Person;
 import htw.berlin.wichteln.jpa.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
