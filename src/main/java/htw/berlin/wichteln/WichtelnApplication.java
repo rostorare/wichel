@@ -1,5 +1,6 @@
 package htw.berlin.wichteln;
 
+
 import htw.berlin.wichteln.model.Person;
 import htw.berlin.wichteln.jpa.PersonRepository;
 import org.slf4j.Logger;
@@ -21,10 +22,14 @@ public class WichtelnApplication {
 	public CommandLineRunner exampleData(PersonRepository repository){
 		return (args) -> {
 			//example persons
+
 			repository.save(new Person("max", "maxmail"));
 			repository.save(new Person("mwangi", "mwangismail"));
 			repository.save(new Person("dio", "ZEWAURDOMAIL"));
 			repository.save(new Person("frank", "frankysmail"));
+
+
+
 
 			log.info("get all persons");
 			for(Person person : repository.findAll()){

@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Create Persons!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h2>You've created a person!</h2>
+<p th:text="'name: ' + ${person.name}"></p>
+<p th:text="'mail: ' + ${person.mail}"></p>
+<a href="/personstable">See all persons</a>
+<a href="/personcreation">create more persons</a>
+</body>
+</html>

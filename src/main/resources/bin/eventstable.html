@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Create s!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Here are all events</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:if="${events.isEmpty()}">
+    <td colspan="2">No s Available</td>
+  </tr>
+  <tr th:each="event : ${events}">
+    <td><span th:text="${event.name}">Name</span></td>
+   </tr>
+  </tbody>
+</table>
+<a href="/eventcreation">Create more events</a>
+</body>
+</html>

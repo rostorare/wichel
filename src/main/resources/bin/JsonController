@@ -1,0 +1,45 @@
+package htw.berlin.wichteln.controller;
+
+import htw.berlin.wichteln.model.Person;
+import htw.berlin.wichteln.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+public class JsonController {
+
+    @Autowired
+    private Environment env;
+
+    @RequestMapping("/env")
+    public String index() {
+        String testEnvValue = Optional.ofNullable(env.getProperty("TEST_VALUE")).orElse("Environment variable not found");
+        return "Hey there, I know environment variables, e.g. " + testEnvValue;
+    }
+
+    @Autowired
+    private PersonService personService;
+
+
+    @PostMapping("/persons")
+    public Person createPerson(@RequestBody Person person) {
+        //person.setOwner(user.getEmail());
+        return personService.save(person);
+    }
+
+    @DeleteMapping("/persons/{id}")
+    public void delete(@PathVariable String id) {
+        Long personId = Long.parseLong(id);
+        personService.deleteById(personId);
+    }
+
+    @GetMapping("/persons/count")
+    public Long count() {
+        return personService.count();
+    }
+
+}

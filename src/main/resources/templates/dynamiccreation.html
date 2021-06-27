@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Create Products!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="module" src="#" th:src="@{/js/main.js}" defer></script>
+  <script type="module" src="#" th:src="@{/js/dynamic-form.js}" defer></script>
+
+
+
+</head>
+<body>
+<h2>Create a Product</h2>
+<div id="app">
+  <dynamic-form title="Here are all products:"></dynamic-form>
+</div>
+</body>
+</html>

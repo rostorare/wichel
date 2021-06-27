@@ -1,19 +1,23 @@
 spring:
+  thymeleaf:
+    mode: HTML
+    check-template-location: on
+    enabled: true
+    suffix: .html
+    prefix: classpath:/templates/
   datasource:
-    #username: ${JDBC_DATASOURCE_USERNAME}
-    #password: ${JDBC_DATASOURCE_PASSWORD}
-    #url: ${JDBC_DATASOURCE_URL}
+    #username: ${wichtel_db_user}
+    #password: ${wichtel_db_passwort}
+    #url: ${wichtel_db_url}
     driver-class-name: org.postgresql.Driver
     platform: postgres
     initialization-mode: always
     hikari:
       maximum-pool-size: 5
     url: jdbc:postgresql://ec2-54-72-155-238.eu-west-1.compute.amazonaws.com:5432/daigmif53si9l4
-    #${JDBC_DATASOURCE_URL}
     username: pzxprjbsmpcwjf
-    #${JDBC_DATASOURCE_USERNAME}
     password: f7b41e11bd796da971e0aefd56de5f3c9bd253385d4d4596240ed279437a0a50
-    #${JDBC_DATASOURCE_PASSWORD}
+
   jpa:
     properties:
       hibernate:
@@ -24,5 +28,9 @@ spring:
     show-sql: false # Set true for debugging
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: create # (create, create-drop, validate, update)
+      ddl-auto: create-drop # (create, create-drop, validate, update)
     open-in-view: false
+
+
+
+

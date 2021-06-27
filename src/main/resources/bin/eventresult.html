@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Create event!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h2>You've created a event!</h2>
+<p th:text="'name: ' + ${event.name}"></p>
+
+<a href="/eventstable">See all event</a>
+<a href="/personcreation">add person to event</a>
+</body>
+</html>

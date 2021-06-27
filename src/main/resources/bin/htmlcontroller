@@ -1,0 +1,78 @@
+package htw.berlin.wichteln.controller;
+
+import htw.berlin.wichteln.model.Person;
+import htw.berlin.wichteln.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Controller
+public class HtmlController {
+
+    @Autowired
+    private PersonService personService;
+
+    private Map<String, LocalDateTime> usersLastAccess = new HashMap<>();
+
+    @Autowired
+    private Environment env;
+
+    /*
+    @GetMapping("/")
+    public String getCurrentUser(@AuthenticationPrincipal OidcUser user, Model model) {
+        String email = user.getEmail();
+
+        model.addAttribute("email", email);
+        model.addAttribute("lastAccess", usersLastAccess.get(email));
+        model.addAttribute("firstName", user.getGivenName());
+        model.addAttribute("lastName", user.getFamilyName());
+
+        usersLastAccess.put(email, LocalDateTime.now());
+
+        return "hello";
+    }
+    */
+    @PostMapping("/createperson")
+    public String personSubmit(@ModelAttribute Person person, Model model) {
+        personService.save(person);
+        model.addAttribute("person", person);
+        return "personresult";
+    }
+    @GetMapping("/createperson")
+    public String personForm(Model model) {
+        model.addAttribute("person", new Person());
+        return "personcreation";
+    }
+/*
+    @GetMapping("/dynamiccreation")
+    public String dynamicForm(Model model) {
+        model.addAttribute("person", new Person());
+        return "dynamiccreation";
+    }
+
+    @PostMapping("/createperson")
+    public String personSubmit(@AuthenticationPrincipal OidcUser user, @ModelAttribute Person person, Model model) {
+        person.setOwner(user.getEmail());
+        personService.save(person);
+        model.addAttribute("person", person);
+        return "personresult";
+    }
+
+    @GetMapping("/listpersons")
+    public String personsTable(@AuthenticationPrincipal OidcUser user, Model model) {
+        List<Person> persons = personService.findAll(user.getEmail());
+        model.addAttribute("persons", persons);
+        return "personstable";
+    }
+    */
+
+}

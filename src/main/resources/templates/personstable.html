@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Create Persons!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Here are all persons</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:if="${persons.isEmpty()}">
+    <td colspan="2">No Persons Available</td>
+  </tr>
+  <tr th:each="person : ${persons}">
+    <td><span th:text="${person.name}">Name</span></td>
+    <td><span th:text="${person.mail}">mail</span></td>
+  </tr>
+  </tbody>
+</table>
+<a href="/personcreation">Create more persons</a>
+</body>
+</html>
