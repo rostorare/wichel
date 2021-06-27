@@ -23,21 +23,21 @@ public class WichtelnApplication {
 		return (args) -> {
 			//example persons
 
-			repository.save(new Person("max", "maxmail"));
-			repository.save(new Person("mwangi", "mwangismail"));
-			repository.save(new Person("dio", "ZEWAURDOMAIL"));
-			repository.save(new Person("frank", "frankysmail"));
+		//	repository.save(new Person("max", "maxmail"));
+		//	repository.save(new Person("mwangi", "mwangismail"));
+		//	repository.save(new Person("dio", "ZEWAURDOMAIL"));
+		//	repository.save(new Person("frank", "frankysmail"));
 
 
 
 
-			log.info("get all persons");
-			for(Person person : repository.findAll()){
-				log.info(person.toString());
+		//	log.info("get all persons");
+		//	for(Person person : repository.findAll()){
+		//		log.info(person.toString());
 
 				//rest des tutorials geskipped
 				//do i need @ComponentScan,@EnableAutoConfiguration,@Configuration???
-			}
+		//	}
 		};
 	}
 

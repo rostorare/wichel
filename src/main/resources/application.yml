@@ -14,9 +14,9 @@ spring:
     initialization-mode: always
     hikari:
       maximum-pool-size: 5
-    url: jdbc:postgresql://ec2-54-72-155-238.eu-west-1.compute.amazonaws.com:5432/daigmif53si9l4
-    username: pzxprjbsmpcwjf
-    password: f7b41e11bd796da971e0aefd56de5f3c9bd253385d4d4596240ed279437a0a50
+    url: jdbc:postgresql://ec2-108-128-104-50.eu-west-1.compute.amazonaws.com:5432/dtmo7lcm15psu
+    username: urrnvyxvpkrrjx
+    password: 39025e8f19dcf63c857886edb8f08c096e7bd902dd1ead48cc040b275272a7d4
 
   jpa:
     properties:
@@ -28,7 +28,7 @@ spring:
     show-sql: false # Set true for debugging
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: create-drop # (create, create-drop, validate, update)
+      ddl-auto: update # (create, create-drop, validate, update)
     open-in-view: false
 
 
