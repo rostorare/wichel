@@ -24,6 +24,14 @@ class PersonController {
         this.repository = repository;
         }
 
+    @GetMapping("/")
+    public String personTablex(Model m) {
+        List<Person> persons = (List<Person>) repository.findAll();
+        m.addAttribute("persons", persons);
+        return "personstable";
+    }
+
+
     @GetMapping("/personstable")
     public String personTable(Model m) {
         List<Person> persons = (List<Person>) repository.findAll();
